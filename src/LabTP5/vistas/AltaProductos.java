@@ -11,7 +11,10 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import LabTP5.entidades.Producto;
 import java.util.Vector;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 public class AltaProductos extends javax.swing.JInternalFrame {
 
@@ -25,6 +28,7 @@ public class AltaProductos extends javax.swing.JInternalFrame {
         initComponents();
         this.productos = productos;
         armarCabecera();
+        
     }
 
     /**
@@ -245,7 +249,7 @@ public class AltaProductos extends javax.swing.JInternalFrame {
         Pattern p = Pattern.compile("\\d{1,4}");
         Matcher m = p.matcher(jtCodigo.getText());
         if (!m.matches()) {
-            JOptionPane.showMessageDialog(this, "Ustede debe ing. un nro");
+            JOptionPane.showMessageDialog(this, "Ustede debe ingresar un nro en el campo Código");
             jtCodigo.requestFocus();
             return;
         }
@@ -256,7 +260,7 @@ public class AltaProductos extends javax.swing.JInternalFrame {
         Pattern p = Pattern.compile("^[+]?[0-9]*\\.?[0-9]+(?:[eE][-+]?[0-9]+)?$");
         Matcher m = p.matcher(jtPrecio.getText());
         if (!m.matches()) {
-            JOptionPane.showMessageDialog(this, "Ustede debe ing. un nro");
+            JOptionPane.showMessageDialog(this, "Ustede debe ingresar un nro en el campo Precio");
             jtPrecio.requestFocus();
             return;
         }
@@ -268,12 +272,18 @@ public class AltaProductos extends javax.swing.JInternalFrame {
         Pattern p = Pattern.compile("\\d{1,4}");
         Matcher m = p.matcher(jtStock.getText());
         if (!m.matches()) {
-            JOptionPane.showMessageDialog(this, "Ustede debe ing. un nro");
+            JOptionPane.showMessageDialog(this, "Ustede debe ingresar un nro en el campo Stock");
             jtStock.requestFocus();
             return;
         }
     }//GEN-LAST:event_jtStockFocusLost
-
+private void jtDescripcionFocusLost(java.awt.event.FocusEvent evt) {                                   
+    // Validación para la descripción
+    if (!jtDescripcion.getText().matches("^[a-zA-Z0-9\\s]+$")) {
+        JOptionPane.showMessageDialog(this, "Debe ingresar una descripción válida.");
+        jtDescripcion.requestFocus();
+    }
+}  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

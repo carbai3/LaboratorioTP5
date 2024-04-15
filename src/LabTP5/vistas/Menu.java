@@ -11,7 +11,7 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         
         // Establecer el tamaño de la ventana
-        setSize(1000, 520); // Tamaño personalizado
+        setSize(1280, 720); // Tamaño personalizado
         // Crear un JPanel personalizado para el fondo      
     }
 
@@ -114,8 +114,10 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jmiConsultasActionPerformed
 
     private void jmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmSalirActionPerformed
-        System.exit(0);
+        System.out.println("Hola");
+        dispose();
     }//GEN-LAST:event_jmSalirActionPerformed
+    // TODO add your handling code here:
 
     /**
      * @param args the command line arguments
