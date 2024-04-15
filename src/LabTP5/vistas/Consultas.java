@@ -13,18 +13,13 @@ import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author carba
- */
-public class Consultas extends javax.swing.JInternalFrame {
 
+public class Consultas extends javax.swing.JInternalFrame {
+// ArrayList de productos
     private ArrayList<Producto> productos;
     private DefaultTableModel modelo = new DefaultTableModel();
 
-    /**
-     * Creates new form Consultas
-     */
+
     public Consultas(ArrayList<Producto> productos) {
         initComponents();
         this.productos = productos;
@@ -33,7 +28,7 @@ public class Consultas extends javax.swing.JInternalFrame {
     }
 
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
